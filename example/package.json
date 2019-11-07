@@ -29,5 +29,8 @@
         "jest": "^21.2.1",
         "jest-screenshot": "file:..",
         "puppeteer": "^1.0.0"
+    },
+    "dependencies": {
+        "aws-sdk": "^2.566.0"
     }
 }

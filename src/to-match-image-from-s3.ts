@@ -107,7 +107,7 @@ export function toMatchImageSnapshotFromS3(
     parameters: ToMatchImageSnapshotParameters = {},
 ): MatcherResult {
     const { snapshotsDir, reportDir, noReport } = configuration;
-    console.log({ configuration });
+    console.log({ snapshotsDir, reportDir, noReport });
     // Check whether `this` is really the expected Jest configuration.
     if (!isJestTestConfiguration(this)) {
         throw new Error("Jest: Attempted to call `.toMatchImageSnapshot()` outside of Jest context.");
