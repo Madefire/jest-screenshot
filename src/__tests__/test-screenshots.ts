@@ -6,13 +6,13 @@ describe("screenshots", () => {
         setupJestScreenshot();
     });
 
-    it("stackoverflow", () => {
+    it.skip("stackoverflow", () => {
         expect(() => {
             expect(readFileSync(`${__dirname}/fixtures/screenshot-stackoverflow.png`)).toMatchImageSnapshot();
         }).toThrowErrorMatchingSnapshot();
     });
 
-    it("npmjs", () => {
+    it.skip("npmjs", () => {
         expect(() => {
             expect(readFileSync(`${__dirname}/fixtures/screenshot-npmjs.png`)).toMatchImageSnapshot();
         }).toThrowErrorMatchingSnapshot();

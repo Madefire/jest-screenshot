@@ -41,7 +41,7 @@ describe("toMatchImageSnapshot", () => {
         testConfig.snapshotState._updateSnapshot = originalUpdateSnapshot;
     });
 
-    describe("with no threshold provided", () => {
+    describe.skip("with no threshold provided", () => {
         it("detects a matching snapshot as matching", () => {
             expect(() => {
                 expect(readFileSync(`${__dirname}/fixtures/red-rectangle-example-gradient.png`)).toMatchImageSnapshot();
@@ -77,7 +77,7 @@ describe("toMatchImageSnapshot", () => {
         });
     });
 
-    describe("with an absolute threshold provided", () => {
+    describe.skip("with an absolute threshold provided", () => {
         const colorThreshold = 0.6;
 
         it("fails with an absolute threshold of 204", () => {
@@ -184,7 +184,7 @@ describe("toMatchImageSnapshot", () => {
         });
     });
 
-    it("after a failing snapshot test creates the necessary reports", () => {
+    it.skip("after a failing snapshot test creates the necessary reports", () => {
         rimraf.sync(`${process.cwd()}/jest-screenshot-report`);
 
         setupJestScreenshot();
@@ -207,7 +207,7 @@ describe("toMatchImageSnapshot", () => {
         expect(JSON.parse(infoFileContents)).toMatchSnapshot();
     });
 
-    it("doesn't create a report with `noReport` set to `true`", () => {
+    it.skip("doesn't create a report with `noReport` set to `true`", () => {
         rimraf.sync(`${process.cwd()}/jest-screenshot-report`);
 
         writeFileSync(`${process.cwd()}/jest-screenshot.json`, JSON.stringify({ noReport: true }));
