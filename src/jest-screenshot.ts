@@ -1,4 +1,5 @@
 import { toMatchImageSnapshot, ToMatchImageSnapshotParameters } from "./to-match-image-snapshot";
+import { toMatchImageSnapshotFromS3 } from "./to-match-image-from-s3";
 import { sync as mkdirp } from "mkdirp";
 import { JestScreenshotConfiguration, config } from "./config";
 
@@ -15,5 +16,8 @@ export function setupJestScreenshot(customConfig?: JestScreenshotConfiguration) 
         toMatchImageSnapshot(received: Buffer, parameters: ToMatchImageSnapshotParameters) {
             return toMatchImageSnapshot.call(this, received, config(customConfig), parameters);
         },
+        toMatchImageSnapshotFromS3(received: Buffer, parameters: ToMatchImageSnapshotParameters) {
+            return toMatchImageSnapshotFromS3.call(this, received, config(customConfig), parameters);
+        }
     });
 }

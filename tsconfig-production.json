@@ -20,5 +20,7 @@
         "example/",
         "jest-framework-setup.ts",
         "index.d.ts"
-    ]
+    ],
+    "errorReporting": {
+    }
 }
